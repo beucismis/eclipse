@@ -1,0 +1,18 @@
+title = "eclipse theme"
+base_url = "https://beucismis.github.io/eclipse"
+description = "A dark theme for Zola"
+generate_feed = true
+
+taxonomies = [
+    {name = "categories", feed = true},
+    {name = "tags", feed = true},
+]
+
+[extra]
+author = "beucismis"
+eclipse_menu = [
+    {url = "$BASE_URL", name = "/"},
+    {url = "$BASE_URL/categories", name = "categories"},
+    {url = "$BASE_URL/tags", name = "tags"},
+]
+eclipse_title = "my blog"

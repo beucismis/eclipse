@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+  {% set logs = get_section(path="logs/_index.md") %}
+  <div class="content">
+    {{ section.content | safe }}
+    <h2>Last Logs</h2>
+    <ul>
+      {% for log in logs.pages | slice(end=5) %}
+        <li>[{{ log.date | date(format="%Y-%m-%d") }}] <a href="{{ log.permalink }}">{{ log.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock content %}
+{% block buttons %}
+  <div class="buttons">
+    Buttons...
+  </div>
+  <div class="footer">
+    <p><i>This site is free of cookies and JavaScript</i> | <a href="">Source</a></p>
+  </div>
+{% endblock buttons %}

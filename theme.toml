@@ -1,0 +1,10 @@
+name = "eclipse"
+description = "A dark theme for Zola"
+license = "MIT"
+homepage = "https://github.com/beucismis/eclipse"
+min_version = "0.0.1"
+demo = "https://beucismis.github.io/eclipse"
+
+[author]
+name = "beucismis"
+homepage = "https://github.com/beucismis"
