@@ -3,10 +3,10 @@ base_url = "https://beucismis.github.io/eclipse"
 description = "A dark theme for Zola"
 generate_feed = true
 
-taxonomies = [
-    {name = "categories", feed = true},
-    {name = "tags", feed = true},
-]
+#taxonomies = [
+#    {name = "categories", feed = true},
+#    {name = "tags", feed = true},
+#]
 
 [extra]
 author = "beucismis"
