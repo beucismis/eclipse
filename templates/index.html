@@ -37,7 +37,7 @@
 {% block buttons %}
     <div class="buttons">
       {% for item in config.extra.eclipse_button %}
-        <a href=""><img src="{{ item.url }}"></a>
+        <a href=""><img src="{{ get_url(path=item.url) }}"></a>
       {% endfor %}
     </div>
 {% endblock buttons %}
