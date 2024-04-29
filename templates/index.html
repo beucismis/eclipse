@@ -1,11 +1,43 @@
 {% extends "base.html" %}
+
 {% block content %}
+  <div class="content">
+
+    {{ section.content | safe }}
+
+    {% if config.extra.eclipse_profile %}
+      <h2>Profiles</h2>
+      {% for item in config.extra.eclipse_profile %}
+        <span><b>{{ item.title }}:</b> {{ item.url }}</span></br>
+      {% endfor %}
+    {% endif %}
+    
+    {% if config.extra.eclipse_contact %}
+      <h2>Contact</h2>
+      {% for item in config.extra.eclipse_contact %}
+        <span><b>{{ item.title }}:</b> {{ item.url }}</span></br>
+      {% endfor %}
+    {% endif %}
+
+    {% if paginator.pages %}
+      <h2>Recently Posts</h2>
+      <ul>
+        {% for page in paginator.pages %}
+          <li>
+            [{{ page.date | date(format="%d-%m-%Y") }}]
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+  </div>
 {% endblock content %}
+
 {% block buttons %}
-  <div class="buttons">
-    Buttons...
-  </div>
-  <div class="footer">
-    <p><i>This site is free of cookies and JavaScript</i> | <a href="">Source</a></p>
-  </div>
-{% endblock buttons %}3
+    <div class="buttons">
+      {% for item in config.extra.eclipse_button %}
+        <a href=""><img src="{{ item.url }}"></a>
+      {% endfor %}
+    </div>
+{% endblock buttons %}
