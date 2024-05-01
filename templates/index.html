@@ -1,17 +1,31 @@
 {% extends "base.html" %}
 
+{% block menu %}
+  <div class="menu">
+    <ul>
+      {% for item in config.extra.eclipse_menu %}
+        <li>
+          <a href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) | safe }}">
+            <b>{{ item.name }}</b>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock menu %}
+
 {% block content %}
   <div class="content">
 
     {{ section.content | safe }}
-
+    
     {% if config.extra.eclipse_profile %}
       <h2>Profiles</h2>
       {% for item in config.extra.eclipse_profile %}
         <span><b>{{ item.title }}:</b> {{ item.url }}</span></br>
       {% endfor %}
     {% endif %}
-    
+
     {% if config.extra.eclipse_contact %}
       <h2>Contact</h2>
       {% for item in config.extra.eclipse_contact %}
@@ -30,7 +44,7 @@
         {% endfor %}
       </ul>
     {% endif %}
-
+    
   </div>
 {% endblock content %}
 
