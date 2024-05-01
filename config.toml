@@ -1,17 +1,14 @@
-title = "Eclipse Theme"
+title = "Eclipse"
 base_url = "https://beucismis.github.io/eclipse"
 description = "A dark theme for Zola"
 generate_feed = true
 
-#taxonomies = [
-#    {name = "categories", feed = true},
-#    {name = "tags", feed = true},
-#]
 
 [extra]
 author = "beucismis"
 eclipse_menu = [
     {url = "$BASE_URL", name = "/home"},
+    {url = "$BASE_URL/projects", name = "/projects"},
 ]
 eclipse_profile = [
     {title = "GitHub", url = "https://github.com/example"},
