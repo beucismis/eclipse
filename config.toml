@@ -3,22 +3,28 @@ base_url = "https://beucismis.github.io/eclipse"
 description = "A dark theme for Zola"
 generate_feed = true
 
+[markdown]
+render_emoji = true
 
 [extra]
 author = "beucismis"
 eclipse_menu = [
-    {url = "$BASE_URL", name = "/home"},
-    {url = "$BASE_URL/projects", name = "/projects"},
-]
-eclipse_profile = [
-    {title = "GitHub", url = "https://github.com/example"},
-    {title = "GitLab", url = "https://gitlab.com/example"},
+    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL/posts", name = "Posts"},
+    {url = "$BASE_URL/journal", name = "Journal"},
+    {url = "$BASE_URL/projects", name = "Projects"},
+    {url = "$BASE_URL/donate", name = "Donate"},
 ]
 eclipse_contact = [
     {title = "E-mail", url = "me@example.com"},
 ]
+eclipse_profile = [
+    {title = "GitHub", url = "https://github.com/example"},
+    {title = "Mastodon", url = "https://mastodon.social/@example"}, 
+    {title = "Pixelfed", url = "https://pixelfed.social/example"},
+]
 eclipse_button = [
-    {url = "/button/gnu.png"},
-    {url = "/button/linux.png"},
-    {url = "/button/debian.png"},
+    {image = "/button/gnu.png", target=""},
+    {image = "/button/linux.png", target=""},
+    {image = "/button/debian.png", target=""},
 ]
