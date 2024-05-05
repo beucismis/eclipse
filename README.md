@@ -18,6 +18,8 @@ theme = "eclipse"
 
 ## Screenshot
 
+![](https://github.com/beucismis/eclipse/assets/40023234/4173a80c-3b57-4d87-b38f-edf016c0aba6)
+
 ## License
 
 `eclipse` is distributed under the terms of the [MIT](LICENSE.txt) license.
