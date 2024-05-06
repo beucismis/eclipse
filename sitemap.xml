@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://beucismis.github.io/eclipse/</loc>
+    </url>
+    <url>
+        <loc>https://beucismis.github.io/eclipse/donate/</loc>
+    </url>
+    <url>
+        <loc>https://beucismis.github.io/eclipse/journal/</loc>
+    </url>
+    <url>
+        <loc>https://beucismis.github.io/eclipse/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://beucismis.github.io/eclipse/posts/</loc>
+    </url>
+    <url>
+        <loc>https://beucismis.github.io/eclipse/posts/markdown-test/</loc>
+        <lastmod>2024-05-05</lastmod>
+    </url>
+    <url>
+        <loc>https://beucismis.github.io/eclipse/posts/some-article/</loc>
+        <lastmod>2024-04-28</lastmod>
+    </url>
+    <url>
+        <loc>https://beucismis.github.io/eclipse/projects/</loc>
+    </url>
+</urlset>

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://beucismis.github.io/eclipse/sitemap.xml
