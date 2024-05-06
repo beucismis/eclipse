@@ -1,11 +1,9 @@
 {% extends "page.html" %}
-
-{% block content %}  
-  <div class="content" style="margin-bottom: 1rem;">
-    <div class="title">
-      <h1>{{ section.title }}</h1>
+{% block content %}
+    <div class="content" style="margin-bottom: 1rem;">
+        <div class="title">
+            <h1>{{ section.title }}</h1>
+        </div>
+        {{ section.content | safe }}
     </div>
-
-    {{ section.content | safe }}
-  </div>
 {% endblock content %}

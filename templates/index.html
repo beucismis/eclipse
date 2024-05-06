@@ -1,61 +1,55 @@
 {% extends "base.html" %}
-
 {% block menu %}
-  <div class="menu">
-    <ul>
-      {% for item in config.extra.eclipse_menu %}
-        <li>
-          <a href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) | safe }}">
-            {{ item.name }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+    <div class="menu">
+        <ul>
+            {% for item in config.extra.eclipse_menu %}
+                <li>
+                    <a href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) | safe }}">{{ item.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock menu %}
-
 {% block content %}
-  <div class="content">
-
-    <h1>{{ section.title }}</h1>
-    {{ section.content | safe }}
-
-    {% if config.extra.eclipse_contact %}
-      <h2>Contact</h2>
-      {% for item in config.extra.eclipse_contact %}
-        <span>{{ item.title }}: {{ item.url }}</span></br>
-      {% endfor %}
-    {% endif %}
-
-    {% if config.extra.eclipse_profile %}
-      <h2>Profiles</h2>
-      {% for item in config.extra.eclipse_profile %}
-        <span>{{ item.title }}: <a href="{{ item.url }}">{{ item.url }}</a></span></br>
-      {% endfor %}
-    {% endif %}
-
-    {% if paginator.pages %}
-      {% set section = get_section(path="posts/_index.md") %}
-      <h2>Recently Posts</h2>
-      <ul>
-        {% for page in section.pages %}
-          <li>
-            <a href="{{ page.permalink }}">{{ page.title }}</a>
-            {% if page.date %}
-              <span style="opacity: 50%;">[{{ page.date }}]</span>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-    
-  </div>
+    <div class="content">
+        <h1>{{ section.title }}</h1>
+        {{ section.content | safe }}
+        {% if config.extra.eclipse_contact %}
+            <h2>Contact</h2>
+            <ul>
+                {% for item in config.extra.eclipse_contact %}
+                    <li>{{ item.title }}: {{ item.url }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if config.extra.eclipse_profile %}
+            <h2>Profiles</h2>
+            <ul>
+                {% for item in config.extra.eclipse_profile %}
+                    <li>{{ item.title }}: <a href="{{ item.url }}">{{ item.url }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if paginator.pages %}
+            {% set section = get_section(path="posts/_index.md") %}
+            <h2>Recently Posts</h2>
+            <ul>
+                {% for page in section.pages %}
+                    <li>
+                        <a href="{{ page.permalink }}">{{ page.title }}</a>
+                        {% if page.date %}
+                            <span style="opacity: 50%;">[{{ page.date }}]</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
 {% endblock content %}
-
 {% block buttons %}
     <div class="buttons">
-      {% for item in config.extra.eclipse_button %}
-        <a href="{{ item.target }}"><img src="{{ get_url(path=item.image) }}"></a>
-      {% endfor %}
+        {% for item in config.extra.eclipse_button %}
+            <a href="{{ item.target }}"><img src="{{ get_url(path=item.image) }}"></a>
+        {% endfor %}
     </div>
 {% endblock buttons %}
