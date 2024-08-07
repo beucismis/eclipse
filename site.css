@@ -1,0 +1,290 @@
+/* Variables */
+
+:root {
+  --base-color: white;
+  --base-font-size: 14px;
+  --base-line-height: 1.5;
+  --base-font-family: "Roboto";
+
+  --title-color: #FF9800;
+  --link-color: #6CF;
+  --text-color: var(--base-color);
+
+  --selection-text: black;
+  --selection-background: rgba(219, 219, 219, 0.99);
+
+  --background-color: black;
+  --background-image: url("background.png");
+
+  --border-color: rgba(219, 219, 219, 0.9);
+}
+
+/* Global */
+
+html {
+  font-size: var(--base-font-size);
+  font-family: var(--base-font-family);
+}
+
+body {
+  width: 50%;
+  margin: 0 auto;
+  color: var(--text-color);
+  background-image: var(--background-image);
+  background-color: var(--background-color);
+  line-height: var(--base-line-height) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  margin-top: 1rem;
+  font-weight: normal;
+  color: var(--title-color);
+  font-size: var(--base-font-size);
+}
+
+p, ul, ol {
+  margin: 0;
+  color: var(--text-color);
+}
+
+
+ul, ol {
+  margin-left: 0.5rem;
+}
+
+ul ul {
+  margin-left: 1rem;
+}
+
+ul ul ul {
+  margin-left: 1rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--background-color);
+  background-color: var(--link-color);
+}
+
+table {
+  width: 50%;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border: 1px dashed var(--border-color);
+}
+
+hr {
+  color: var(--border-color);
+}
+
+blockquote {
+  margin-left: 1rem;
+  padding-left: 0.5rem;
+  border-left: 0.2rem solid var(--border-color);
+}
+
+blockquote p {
+  opacity: 70%;
+}
+
+/* Layout */
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  /*
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  */
+}
+
+main {
+  display: flex;
+}
+
+.left {
+  width: 15%;
+}
+
+.right {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin: 2rem 1rem 1rem 1rem;
+  border-top: 1px dashed var(--border-color);
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.menu ul {
+  padding: 0;
+  margin: 1rem 0 1rem 0;
+  list-style-type: none;
+}
+
+.menu li a {
+  display: block;
+  color: var(--link-color);
+}
+
+.menu li a:hover {
+  text-decoration: none;
+  color: var(--background-color);
+  background-color: var(--link-color);
+}
+
+.content {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 1rem;
+  margin: 2rem 1rem 2rem 1rem;
+  border-top: 1px dashed var(--border-color);
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.content .title {
+  display: flex;
+  /* margin-bottom: 1rem; */
+  justify-content: space-between;
+}
+
+.content img {
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+}
+
+.content h1::before {
+  content: "# ";
+}
+
+.content h2::before {
+  content: "## ";
+}
+
+.content h3::before {
+  content: "### ";
+}
+
+.content h4::before {
+  content: "#### ";
+}
+.content h5::before {
+  content: "##### ";
+}
+.content h6::before {
+  content: "###### ";
+}
+.content .title .date {
+  opacity: 50%;
+  padding-top: 1rem;
+}
+
+.buttons {
+  flex: none;
+  margin: -1rem 1rem 1rem 1rem;
+  padding: 0.2rem 0.5rem 0.8rem 0.5rem;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.buttons a {
+  text-decoration: none;
+}
+
+.buttons a:hover {
+  color: var(--base-color);
+  background-color: var(--background-color);
+}
+
+footer {
+  text-align: right;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin: 0 1rem 1rem 1rem;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+/* Lists */
+
+:not(.menu) > ul {
+  padding-left: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+:not(.menu) > ul > li:before {
+  content: "-";
+  margin-right: 5px;
+}
+
+:not(.menu) > ul > li:last-child {
+  margin-bottom: 0.5rem;
+
+/* Highlight */
+
+::selection {
+  color: var(--selection-text);
+  background: var(--selection-background);
+}
+
+::-moz-selection {
+  color: var(--selection-text);
+  background: var(--selection-background);
+}
+
+/* Code */
+
+code {
+  font-size: 12px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  white-space: pre-wrap;
+  border-radius: 0.3rem;
+  border: 1px solid var(--border-color);
+}
+
+pre code {
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+pre {
+  padding: 0.5rem;
+  white-space: pre-wrap;
+  border-radius: 0.3rem;
+  border: 1px dashed var(--border-color);
+}
+
+/* Media Rules */
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+
+  .left {
+    width: 20%;
+  }
+
+  .right {
+    width: 80%;
+  }
+}
